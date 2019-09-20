@@ -116,11 +116,12 @@ validate_arguments(int in, int out, int offset, int *nbytes)
     }
 
     /* check for offset overflow */
-    if (offset > *nbytes)
+    // TODO: skip the offset overflow check if not supported (eg: socket)
+    /* if (offset > *nbytes)
     {
         PyErr_SetString(PyExc_OverflowError, "Offset overflow error");
         return -1;
-    }
+    } */
     return 1;
 }
 
