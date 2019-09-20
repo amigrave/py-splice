@@ -66,6 +66,7 @@ splice_copy(int fd_in, int fd_out, int offset, size_t len, int flags)
     }
     perror("Test");
     bytes = splice(fd_in, NULL, fd_out, NULL, buf_size, flags);
+    perror("Test2");
     return bytes;
 
     while(len > 0)
