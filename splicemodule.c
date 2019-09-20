@@ -64,6 +64,8 @@ splice_copy(int fd_in, int fd_out, int offset, size_t len, int flags)
         perror("Error creating pipe");
         return 1;
     }
+    bytes = splice(fd_in, NULL, fd_out, NULL, buf_size, flags);
+    return bytes;
 
     while(len > 0)
     {
