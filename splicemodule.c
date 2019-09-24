@@ -65,6 +65,7 @@ splice_copy(int fd_in, int fd_out, int offset, size_t len, int flags)
         return 1;
     }
 
+    printf("\nfd_in=%d len=%lu", fd_in, len);
     bytes = splice(fd_in, NULL, fd_pipe[1], NULL, len, flags);
     if (bytes == -1) {
         perror("Copy failed");
